@@ -44,12 +44,15 @@ componentWillUnmount() {
   render() {
     return (
       <div id='navbar'>
-        <a href="/web-design">Home</a>
-        <a href="/web-design/projects">Projekte</a>
-        <a href="/web-design/contact">Kontakt</a>
-        <a href="/web-design/seo">SEO</a>
-        <a href="/web-design/hosting">Hosting</a>
-        <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '35%', marginTop: '1%' }}>
+        <div id='navLinks'>
+        <a id='Home' href="/web-design">Home</a>
+        <a id='Projekte' href="/web-design/projects">Projekte</a>
+        <a id='Kontakt' href="/web-design/contact">Kontakt</a>
+        <a id='SEO' href="/web-design/seo">SEO</a>
+        <a id='Hosting' href="/web-design/hosting">Hosting</a>
+        </div>
+        <div id='logo'>
+        <div style={{ display: 'flex', flexDirection: 'row', marginTop: '1%' }}>
           <div>
             <img alt='' src={leftTag} />
           </div>
@@ -58,10 +61,10 @@ componentWillUnmount() {
           </div>
           <div >
             <img alt='' src={rightTag} />
-          </div>
-          <div style={{ height: '50%', fontSize: '100%', fontStyle: 'oblique', color: 'white', marginTop: '1%' }}>
+          </div></div></div>
+          <div id='myName' style={{ height: '50%',  fontStyle: 'oblique', color: 'white', marginTop: '1%' }}>
             by Alexandra Hirsch
-          </div></div>
+          </div>
       </div>
     )
   }

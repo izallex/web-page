@@ -1,9 +1,29 @@
+
+@media(min-width:1000px){
+
+  #logo{
+    grid-area: Logo;
+  }
+
+  #navLinks{
+   grid-area: navElts;
+  }
+
+  #myName{
+    grid-area: myName;
+  }
+
 #navbar {
     background-color: #333;
     position: fixed;
     top: 0;
     width: 100%;
-    display: block;
+    display: grid;
+    grid-template-columns: 3.5fr 1fr 1fr 3fr;
+    grid-template-rows: 0.7fr 0.5fr 5fr;
+    grid-template-areas: 'navElts . . .'
+                         'navElts Logo . .'
+                         'navElts Logo myName .';
     transition: top 1.3s;
   }
   
@@ -21,3 +41,148 @@
     background-color: #ddd;
     color: black;
   }
+
+}
+
+
+@media(max-width:1000px){
+
+  #Home{
+    grid-area:Home;
+  }
+
+  #Projekte{
+    grid-area: Projekte;
+  }
+
+  #Kontakt{
+    grid-area: Kontakt;
+  }
+
+  #SEO{
+    grid-area:SEO;
+  }
+
+  #Hosting{
+    grid-area: Hosting;
+  }
+
+  #logo{
+    grid-area: Logo;
+  }
+
+ 
+  #myName{
+    grid-area: myName;
+    font-size: small;
+    padding-top: 6%;
+  }
+  
+  #navLinks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas: 'Home Projekte Kontakt SEO Hosting';
+    grid-area: navLinks;         
+  }
+
+
+  #navbar {
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      grid-template-columns: 1fr 1fr 1fr ;
+      grid-template-areas: ' navLinks navLinks navLinks'
+                           '. Logo myName';
+      transition: top 1.3s;
+    }
+
+   
+    #navbar a {
+     
+      color: #f2f2f2;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+      font-size: large;
+   
+    }
+    
+    #navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  }
+
+  @media(max-width:400px){
+
+    #Home{
+      grid-area:Home;
+    }
+  
+    #Projekte{
+      grid-area: Projekte;
+    }
+  
+    #Kontakt{
+      grid-area: Kontakt;
+    }
+  
+    #SEO{
+      grid-area:SEO;
+    }
+  
+    #Hosting{
+      grid-area: Hosting;
+    }
+  
+    #logo{
+      grid-area: Logo;
+  
+    }
+  
+    #myName{
+      grid-area: myName;
+  
+      font-size: small;
+    }
+    
+    #navLinks{
+      margin-top: 1%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+      grid-template-areas: 'Home Projekte Kontakt SEO Hosting';
+      grid-area: navLinks;         
+    }
+  
+  
+    #navbar {
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 0fr 1fr;
+        grid-template-columns: 5fr 5fr 5fr ;
+        grid-template-areas: ' navLinks navLinks navLinks'
+                             '. Logo myName';                     
+        transition: top 1.3s;
+      }
+  
+     
+      #navbar a {
+        color: #f2f2f2;
+        text-align: center;
+       
+        text-decoration: none;
+        font-size: small;
+     
+      }
+      
+      #navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+    }
