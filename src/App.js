@@ -8,6 +8,7 @@ import { useState } from 'react';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import NavbarComp from './NavbarComp';
 import ProjectPage from './ProjectPage';
+import ContactPage from './ContactPage';
 import './App.css';
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
 						<Route exact path="/web-design/projects" element={<ProjectPage/>}>
 
 						</Route>
-						<Route exact path="/web-design/contact">
+						<Route exact path="/web-design/contact" element={<ContactPage/>}>
 
 						</Route>
 						<Route exact path="/web-design/seo" onClick={(e) => e.preventDefault()}>
