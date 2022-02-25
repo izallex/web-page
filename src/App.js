@@ -7,6 +7,7 @@ import Impressum from './Impressum.js';
 import { useState } from 'react';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import NavbarComp from './NavbarComp';
+import ProjectPage from './ProjectPage';
 import './App.css';
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
 						<Route exact path="/web-design">
 
 						</Route>
-						<Route exact path="/web-design/projects">
+						<Route exact path="/web-design/projects" element={<ProjectPage/>}>
 
 						</Route>
 						<Route exact path="/web-design/contact">
