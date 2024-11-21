@@ -1,0 +1,221 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.whole{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    z-index: 2;
+}
+
+.title  {height:10%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 0;
+}
+.text{
+    width:60%;
+    text-align: left;
+    padding-left:1%;
+}
+.legend{
+    width:40%;
+    padding-top: 2%;
+}
+.advent-calendar {
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 15px;
+    width: 90vw;
+    height: 85vh;
+    max-width: 1600px;
+    max-height: 1000px;
+    padding: 20px;
+    background: linear-gradient(145deg, #8b0000, #4b0000);
+    border: 8px solid #c71585;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.advent-calendar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://example.com/dark-heart-pattern.png');
+    background-size: 200px 200px;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Container for 3D flip effect */
+.door {
+    position: relative;
+    perspective: 1000px;
+}
+
+.door-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.door.opened .door-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front face of the door */
+.door-front,
+.door-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.door-front {
+    background: linear-gradient(145deg, #4b0000, #8b0000);
+    border: 3px solid #ff1493;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff69b4;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.7), 0px 10px 20px rgba(0, 0, 0, 0.3);
+    font-size: 36px;
+}
+
+/* Back face of the door - content side */
+.door-back {
+    background: #3b3b3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    padding: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+    transform: rotateY(180deg);
+}
+
+/* Metallic shine effect */
+.door-front::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Fancy font for door numbers */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+.door-number {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    color: #ff69b4;
+}
+
+
+.door.opened:nth-child(even) .door-back {
+    position: relative;
+    color: white; /* Text bleibt normal */
+    z-index: 1; /* Sicherstellen, dass der Text oben bleibt */
+    padding:5%;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   border-radius: 15px;
+   box-sizing: border-box;
+   margin:0;
+}
+
+.door.opened:nth-child(even) .door-back::before {
+    background-image: url("laugh-and-cry-svgrepo-com.svg");
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:0;
+    background-size: 60%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding:0;
+      background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; /* Hintergrundbild wird halbtransparent */
+  z-index: -1; 
+  
+}
+
+.door.opened:nth-child(odd) .door-back {
+    padding:5%;
+    position: relative;
+    color: white; /* Text bleibt normal */
+    z-index: 1; /* Sicherstellen, dass der Text oben bleibt */
+ 
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   border-radius: 15px;
+   box-sizing: border-box;
+   margin:0;
+}
+
+.door.opened:nth-child(odd) .door-back::before {
+    background-image: url('heart-svgrepo-com.svg');
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:0;
+    background-size: 60%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding:0;
+      background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; /* Hintergrundbild wird halbtransparent */
+  z-index: -1; 
+  
+}
