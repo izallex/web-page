@@ -54,7 +54,8 @@
                     <div class="door-back">
                         <div class="door-content">
                             <div class="visible">
-                                <p class="content">Wie nennt man jemanden, der so tut, als würde er etwas werfen? – Scheinwerfer.</p>
+                                <p class="content">Wie nennt man jemanden, der so tut, als würde er etwas werfen? –
+                                    Scheinwerfer.</p>
                             </div>
                         </div>
                     </div>
@@ -190,7 +191,8 @@
                     <div class="door-back">
                         <div class="door-content">
                             <div class="visible">
-                                <p>Weil du für jede Schnappsidee zu haben bist (egal ob Kleidertausch oder Beautyabend)</p>
+                                <p>Weil du für jede Schnappsidee zu haben bist (egal ob Kleidertausch oder Beautyabend)
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -395,9 +397,9 @@
         </div>
     </div>
     <script>
-         const today = new Date();
+        const today = new Date();
         const currentDay = today.getDate(); // Der aktuelle Tag im Monat (1-31) 
-    
+
         // Funktion zur Überprüfung, ob eine Tür geöffnet werden kann
         function checkIfDoorIsOpenable(doorNumber) {
             if (currentDay >= doorNumber) {
@@ -410,28 +412,29 @@
         document.querySelectorAll('.door').forEach(door => {
             const doorNumber = parseInt(door.querySelector('.door-number').innerText); // Holen der Türnummer (1-24)
 
-        if (checkIfDoorIsOpenable(doorNumber)) {
-            // Wenn das heutige Datum kleiner als die Türnummer ist, mache die Tür deaktiviert
-      
-            door.addEventListener('click', () => {
-                door.classList.toggle('opened');
-                const doorNumber = door.getAttribute('data-day');
-                
-                // Update the openedDoors array based on the door's state
-                if (door.classList.contains('opened')) {
-                    if (!openedDoors.includes(doorNumber)) {
-                        openedDoors.push(doorNumber);
-                    }
-                } else {
-                    const index = openedDoors.indexOf(doorNumber);
-                    if (index > -1) {
-                        openedDoors.splice(index, 1);
-                    }
-                }
+            if (checkIfDoorIsOpenable(doorNumber)) {
+                // Wenn das heutige Datum kleiner als die Türnummer ist, mache die Tür deaktiviert
 
-                // Save the updated opened doors to localStorage
-                localStorage.setItem('openedDoors', JSON.stringify(openedDoors));
-            });  }
+                door.addEventListener('click', () => {
+                    door.classList.toggle('opened');
+                    const doorNumber = door.getAttribute('data-day');
+
+                    // Update the openedDoors array based on the door's state
+                    if (door.classList.contains('opened')) {
+                        if (!openedDoors.includes(doorNumber)) {
+                            openedDoors.push(doorNumber);
+                        }
+                    } else {
+                        const index = openedDoors.indexOf(doorNumber);
+                        if (index > -1) {
+                            openedDoors.splice(index, 1);
+                        }
+                    }
+
+                    // Save the updated opened doors to localStorage
+                    localStorage.setItem('openedDoors', JSON.stringify(openedDoors));
+                });
+            }
         });
 
         document.querySelectorAll('.submit').forEach(pw => {
@@ -453,16 +456,19 @@
                 }
             });
         });
-      
+
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
 
         document.addEventListener("keydown", function (e) {
             if ((e.key === "F12") || (e.ctrlKey && e.shiftKey && e.key === "I")) {
                 e.preventDefault();
             }
         });
-  
 
-       
+
+
 
     </script>
 
