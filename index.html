@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <audio id="laugh" src="ba-dum-tss-8279.mp3" preload="auto"></audio>
+    <audio id="kiss" src="kiss-sound-effect-43309.mp3" preload="auto"></audio>
+    
     <div class="password-protection" id="protect">
         <h2 style="color:white;">Bitte gib das Passwort ein</h2>
         <input style="width:60%" type="password" id="password" placeholder="Passwort eingeben" />
@@ -418,6 +421,15 @@
                 door.addEventListener('click', () => {
                     door.classList.toggle('opened');
                     const doorNumber = door.getAttribute('data-day');
+                    
+                    const laughSound = document.getElementById('laugh');
+                    const kissSound = document.getElementById('kiss');
+                    if(doorNumber % 2 == 1){
+                        kissSound.play();
+
+                    }else{
+                        laughSound.play();
+                    }
 
                     // Update the openedDoors array based on the door's state
                     if (door.classList.contains('opened')) {
