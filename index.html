@@ -11,7 +11,7 @@
 <body>
     <audio id="laugh" src="ba-dum-tss-8279.mp3" preload="auto"></audio>
     <audio id="kiss" src="kiss-sound-effect-43309.mp3" preload="auto"></audio>
-    
+
     <div class="password-protection" id="protect">
         <h2 style="color:white;">Bitte gib das Passwort ein</h2>
         <input style="width:60%" type="password" id="password" placeholder="Passwort eingeben" />
@@ -226,7 +226,8 @@
                     <div class="door-back">
                         <div class="door-content">
                             <div class="visible">
-                                <p>Weil ich Probleme bei dir offen ansprechen kann und weiß dass du mich dabei ernst nimmst.</p>
+                                <p>Weil ich Probleme bei dir offen ansprechen kann und weiß dass du mich dabei ernst
+                                    nimmst.</p>
                             </div>
                         </div>
                     </div>
@@ -420,21 +421,22 @@
 
                 door.addEventListener('click', () => {
                     door.classList.toggle('opened');
-                    const doorNumber = door.getAttribute('data-day');
-                    
+               
+
                     const laughSound = document.getElementById('laugh');
                     const kissSound = document.getElementById('kiss');
-                    if(doorNumber % 2 == 1){
-                        kissSound.play();
-
-                    }else{
-                        laughSound.play();
-                    }
+                 
 
                     // Update the openedDoors array based on the door's state
                     if (door.classList.contains('opened')) {
                         if (!openedDoors.includes(doorNumber)) {
                             openedDoors.push(doorNumber);
+                            if (doorNumber % 2 == 1) {
+                                kissSound.play();
+
+                            } else {
+                                laughSound.play();
+                            }
                         }
                     } else {
                         const index = openedDoors.indexOf(doorNumber);
