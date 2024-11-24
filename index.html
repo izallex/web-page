@@ -428,15 +428,16 @@
                  
 
                     // Update the openedDoors array based on the door's state
-                    if (door.classList.contains('opened')) {
-                        if (!openedDoors.includes(doorNumber)) {
-                            openedDoors.push(doorNumber);
-                            if (doorNumber % 2 == 1) {
+                    if (door.classList.contains('opened')) { 
+                          if (doorNumber % 2 == 1) {
                                 kissSound.play();
 
                             } else {
                                 laughSound.play();
                             }
+                        if (!openedDoors.includes(doorNumber)) {
+                            openedDoors.push(doorNumber);
+                         
                         }
                     } else {
                         const index = openedDoors.indexOf(doorNumber);
