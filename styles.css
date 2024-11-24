@@ -9,30 +9,6 @@ body {
     overflow: hidden;
 }
 
-     /* Snowflakes styling */
-     .snowflake {
-        position: absolute;
-        top: -10px; /* Start above the viewport */
-        color: white; /* Ensure snowflakes are white */
-        font-size: 1.5rem;
-        pointer-events: none;
-        user-select: none;
-        animation: fall linear infinite;
-        z-index: 9999;
-    }
-
-    /* Keyframes for snowfall animation */
-    @keyframes fall {
-        0% {
-            transform: translateY(-100px); /* Start off-screen at the top */
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(100vh); /* End at the bottom of the screen */
-            opacity: 0; /* Fade out as they fall */
-        }
-    }
-
 .whole{
     display: flex;
     flex-direction: column;

@@ -482,31 +482,6 @@
             }
         });
 
-     // Function to create snowflakes
-     function createSnowflakes() {
-            const numberOfSnowflakes = 100; // Number of snowflakes to generate
-            const snowflakeContainer = document.body; // Container where snowflakes will appear
-
-            for (let i = 0; i < numberOfSnowflakes; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                
-                // Set a random position, size, and animation duration for each snowflake
-                snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random fall duration (between 2s and 5s)
-                snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay before start (between 0s and 5s)
-                snowflake.style.fontSize = `${Math.random() * 1 + 1}rem`; // Random size (between 1rem and 2rem)
-
-                // Use a snowflake emoji (❄) or any other character
-                snowflake.textContent = '❄'; 
-                snowflakeContainer.appendChild(snowflake);
-            }
-        }
-
-        // Call the function to create snowflakes when the page loads
-        window.onload = createSnowflakes;
-
-
     </script>
 
 </body>
