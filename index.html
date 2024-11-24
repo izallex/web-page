@@ -482,7 +482,25 @@
             }
         });
 
+     // Function to create snowflakes
+     function createSnowflakes() {
+            const numberOfSnowflakes = 100;
+            const snowflakeContainer = document.body; 
 
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = `${Math.random() * 100}vw`; 
+                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; 
+                snowflake.style.animationDelay = `${Math.random() * 5}s`; 
+                snowflake.style.fontSize = `${Math.random() * 1 + 1}rem`; 
+                snowflake.textContent = '❄'; // Snowflake emoji
+                snowflakeContainer.appendChild(snowflake);
+            }
+        }
+
+        // Create snowflakes when the page loads
+        window.onload = createSnowflakes;
 
 
     </script>
