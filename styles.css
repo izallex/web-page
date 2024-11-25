@@ -225,7 +225,7 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     justify-content: space-between;
     width: 90%;
     max-width: 1200px;
@@ -274,4 +274,54 @@ body {
         opacity: 0.5;
         transform: scale(1.2);
     }
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: white;
+    z-index: 10;
+}
+
+.footer-text {
+    margin-right: 5px; /* Abstand zwischen Text und Stern */
+}
+
+.footer-star {
+    font-size: 24px; /* Größe des Sterns */
+    color: gold; /* Farbe des Sterns */
+    animation: twinkle 2s infinite ease-in-out; /* Stern-Glitzer-Effekt */
+}
+
+/* Animation für glitzernden Stern */
+@keyframes twinkle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+#protect{
+    width: 40%;
+    height: 15%;
+}
+
+#password{
+    height: 20%;
+    font-size: larger;
+}
+
+.submit{
+    width: 20%;
+    height: 25%;
+    font-size: large;
 }
